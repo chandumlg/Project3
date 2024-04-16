@@ -1,9 +1,9 @@
 # Project name
 name: sample_attribution
 # Project's yaml schema version
-schema_version: 53
+schema_version: 54
 # WH Connection to use.
-connection: snowflake-dev
+connection: snowflake-dev123
 # Whether to allow inputs having no timestamps,
 # if true, data without timestamps are included when running models
 include_untimed: true
@@ -16,10 +16,6 @@ model_folders:
 #  To add / extend filters, check out the section on extends in id_types in documentation.
 entities:
   - name: user
-    serve_traits:
-      - id_served: user_id
-      - id_served: anonymous_id
-      - id_served: email
     id_stitcher: models/user_id_stitcher
     id_types:
       - user_id
