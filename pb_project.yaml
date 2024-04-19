@@ -24,7 +24,7 @@ entities:
     serve_traits_360:
       using_ids:
         # default entity traits 360 model
-        - id_served: user_id
+        - id: user_id
           name: USER_ID_STITCHED_FEATURES
 # lib packages can be imported in project signifying that this project inherits its properties from there
 packages:
