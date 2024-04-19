@@ -1,9 +1,9 @@
 # Project name
 name: sample_attribution
 # Project's yaml schema version
-schema_version: 60
+schema_version: 49
 # WH Connection to use.
-connection: snowflake-dev123
+connection: test
 # Whether to allow inputs having no timestamps,
 # if true, data without timestamps are included when running models
 include_untimed: true
@@ -16,20 +16,16 @@ model_folders:
 #  To add / extend filters, check out the section on extends in id_types in documentation.
 entities:
   - name: user
-    id_stitcher: models/user_id_stitcher
     id_types:
       - user_id
       - anonymous_id
       - email
-    serve_traits_360:
-      using_ids:
-        # default entity traits 360 model
-        - id: user_id
-          name: USER_ID_STITCHED_FEATURES
+
 # lib packages can be imported in project signifying that this project inherits its properties from there
 packages:
   - name: corelib
     url: "https://github.com/rudderlabs/rudderstack-profiles-corelib/tag/schema_{{best_schema_version}}"
+
 # In the url https://github.com/rudderlabs/rudderstack-profiles-corelib/tag/schema_{{best_schema_version}}, {{best_schema_version}} is
 #  a placeholder. The program will figure out the best compatible version.
 # In case you want to check the code in the library, please go to https://github.com/rudderlabs/rudderstack-profiles-corelib/tags

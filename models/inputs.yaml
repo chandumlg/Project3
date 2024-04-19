@@ -1,4 +1,4 @@
-# This is a sample file, for detailed reference see: https://www.rudderstack.com/docs/profiles/get-started/profile-builder/
+# This is a sample file, for detailed reference see: https://rudderlabs.github.io/pywht/
 inputs:
   - name: rsIdentifies
     contract:

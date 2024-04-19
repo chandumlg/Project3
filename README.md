@@ -52,4 +52,4 @@ group by other_id_type;
 ```
 
 ## Know More
-See <a href="https://www.rudderstack.com/docs/profiles/get-started/profile-builder/">public docs</a> for more information on using PB.
+See <a href="https://rudderlabs.github.io/pywht">public docs</a> for more information on using PB.

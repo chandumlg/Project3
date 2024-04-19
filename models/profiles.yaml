@@ -1,14 +1,5 @@
-# This is a sample file, for detailed reference see: https://www.rudderstack.com/docs/profiles/get-started/profile-builder
+# This is a sample file, for detailed reference see: https://rudderlabs.github.io/pywht/
 models:
-  - name: user_id_stitcher
-    model_type: id_stitcher
-    model_spec:
-      validity_time: 24h # 1 day
-      entity_key: user
-      edge_sources:
-        - from: inputs/rsIdentifies
-        - from: inputs/rsTracks
-
   - name: user_profile
     model_type: feature_table_model
     model_spec:
@@ -24,12 +15,12 @@ var_groups:
     vars:
       - entity_var:
           name: first_seen
-          select: min(cast(timestamp as date))
+          select: min(timestamp::date)
           from: inputs/rsTracks
           is_feature: false
       - entity_var:
           name: last_seen
-          select: max(cast(timestamp as date))
+          select: max(timestamp::date)
           from: inputs/rsTracks
           is_feature: false
       - entity_var:
@@ -38,6 +29,6 @@ var_groups:
           description: Life Time Value of a customer
       - entity_var:
           name: days_active
-          select: count(distinct cast(timestamp as date))
+          select: count(distinct timestamp::date)
           from: inputs/rsTracks
           description: No. of days a customer was active
